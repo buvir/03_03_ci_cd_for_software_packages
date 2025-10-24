@@ -5,17 +5,43 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.buvir</groupId>           <!-- choose com.buvir or buvir -->
+  <!-- Use your actual GitHub username or organization here -->
+  <groupId>buvir</groupId>
   <artifactId>hello-actions</artifactId>
   <version>1.0.0</version>
+  <name>hello-actions</name>
+  <description>Example project for publishing with GitHub Actions + Maven</description>
+  <url>https://github.com/buvir/03_03_ci_cd_for_software_packages</url>
 
+  <!-- Distribution target for mvn deploy -->
   <distributionManagement>
     <repository>
+      <!-- THIS ID MUST MATCH the server-id used by setup-java (default is "github") -->
       <id>github</id>
       <name>GitHub Packages</name>
       <url>https://maven.pkg.github.com/buvir/03_03_ci_cd_for_software_packages</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </distributionManagement>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>buvir</id>
+      <name>buvir</name>
+    </developer>
+  </developers>
 
   <dependencies>
     <dependency>
@@ -38,6 +64,7 @@
           <target>11</target>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -47,6 +74,13 @@
             <include>**/*Test.java</include>
           </includes>
         </configuration>
+      </plugin>
+
+      <!-- optional: fail build if deploy can't authenticate -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.2</version>
       </plugin>
     </plugins>
   </build>

@@ -11,15 +11,15 @@
   <version>1.0.0</version>
 
   <!-- REPLACE WITH YOUR GITHUB_USERNAME -->
-  <groupId>GITHUB_USERNAME</groupId>
+  <groupId>com.buvir</groupId>
 
   <distributionManagement>
     <repository>
       <id>github</id>
-      <name>buvir</name>
+      <name>GitHub Packages</name>
 
       <!-- REPLACE WITH YOUR GITHUB_USERNAME and GITHUB_REPONAME -->
-      <url>https://github.com/buvir/03_03_ci_cd_for_software_packages</url>
+      <url>https://maven.pkg.github.com/buvir/03_03_ci_cd_for_software_packages</url>
 
     </repository>
   </distributionManagement>

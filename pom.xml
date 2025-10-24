@@ -5,22 +5,15 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>com.buvir</groupId>           <!-- choose com.buvir or buvir -->
   <artifactId>hello-actions</artifactId>
-
-  <!-- UPDATE THE VERSION EACH RELEASE -->
   <version>1.0.0</version>
-
-  <!-- REPLACE WITH YOUR GITHUB_USERNAME -->
-  <groupId>com.buvir</groupId>
 
   <distributionManagement>
     <repository>
       <id>github</id>
       <name>GitHub Packages</name>
-
-      <!-- REPLACE WITH YOUR GITHUB_USERNAME and GITHUB_REPONAME -->
       <url>https://maven.pkg.github.com/buvir/03_03_ci_cd_for_software_packages</url>
-
     </repository>
   </distributionManagement>
 
